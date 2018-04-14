@@ -1,0 +1,38 @@
+<div class="details">
+    <h2>
+        {{author.name}}
+    </h2>
+
+    <p><span>{{author.email}}</span> | <span>{{author.github}}</span> | <span>{{author.location}}</span></p>
+</div>
+
+<div class="form">
+    <div class="inputwrapper">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="author.name" name="name" id="name" />
+    </div>
+
+    <div class="inputwrapper">
+        <label for="email">Email</label>
+        <input type="email" [(ngModel)]="author.email" name="email" id="email" />
+    </div>
+
+    <div class="inputwrapper">
+        <label for="github">Github</label>
+        <input type="text" [(ngModel)]="author.github" name="github" id="github" />
+    </div>
+
+    <div class="inputwrapper">
+        <label for="twitter">Twitter</label>
+        <input type="text" [(ngModel)]="author.twitter" name="twitter" id="twitter" />
+    </div>
+
+    <div class="inputwrapper">
+        <label for="location">Location</label>
+        <input type="text" [(ngModel)]="author.location" name="location" id="location" />
+    </div>
+
+    <div class="inputwrapper">
+        <input type="submit" class="submit" value="submit" />
+    </div>
+</div>
