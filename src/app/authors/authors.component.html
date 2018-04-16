@@ -1,4 +1,16 @@
 <div class="details">
+    <div class="author-list">
+        <h2>List of Authors</h2>
+        <ul class="authors">
+            <li *ngFor="let author of authors" [class.selected]="author === selectedAuthor" (click)="onSelect(author)">
+                <span class="badge">{{ author.id }}</span> {{ author.name }}
+            </li>
+        </ul>
+
+        <app-author-detail [author]="selectedAuthor"></app-author-detail>
+    </div>
+
+
     <h2>
         {{author.name}}
     </h2>
