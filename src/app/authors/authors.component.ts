@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Author } from '../author';
+import { AuthorService } from '../author.service';
 
 @Component({
   selector: 'app-authors',
@@ -7,7 +8,7 @@ import { Author } from '../author';
   styleUrls: ['./authors.component.css']
 })
 export class AuthorsComponent implements OnInit {
-
+  authors: any;
   author: Author = {
     name: 'Achola',
     email: 'sam.achola@live.com',
@@ -17,9 +18,13 @@ export class AuthorsComponent implements OnInit {
     last_article_published: 'The legend of awesome'
   };
 
-  constructor() { }
+  constructor(private authorService: AuthorService) { }
 
   ngOnInit() {
+    this.authorService.getAuthors()
+      .subscribe((res) => {
+        console.log(res.data);
+      });
   }
 
 }
